@@ -27,7 +27,7 @@ long_description = (
 
 setup(
     name='go-pypi',
-    version='0.0.1',
+    version='0.0.2',
     description='Go pypi',
     long_description=long_description,
     author='Lu Aifei',
