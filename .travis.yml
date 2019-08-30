@@ -7,7 +7,7 @@ install:
 - pip install -r requirements.txt
 script:
 - tox --recreate
-- py.test --cov=go-pypi --cov-report=term-missing tests
+- pytest --cov=./ --cov=--cov-report=term-missing tests
 after_success:
 - coveralls
 deploy:
