@@ -1,11 +1,11 @@
 language: python
 #sudo: false
-#python:
-#- '2.7'
-#- '3.7'
-#script: tox --recreate
-#install:
-#- pip install pytest python-coveralls tox tox-travis
+python:
+- '2.7'
+- '3.7'
+script: tox --recreate
+install:
+- pip install pytest python-coveralls tox tox-travis
 #after_success:
 #- pip install -e .
 #- pytest --cov=./ --cov-report=term-missing test
