@@ -13,7 +13,7 @@ after_success:
 deploy:
   provider: pypi
   user: __token__
-  password: pypi-AgEIcHlwaS5vcmcCJDQzYTM2OGYyLWExOGYtNDg1Zi04NmZkLWVjZjY5YjA2ZGJhOAACJXsicGVybWlzc2lvbnMiOiAidXNlciIsICJ2ZXJzaW9uIjogMX0AAAYgq3Q_EpJ8_YIp405sWqiuAoAzG6R7HPeayM7KLqX1M5k
+  password: $PYPI_DEPLOY_TOKEN
   on:
     branch: master
     python: 3.7
