@@ -1,4 +1,4 @@
-tox == 3.13.2
-pytest == 5.1.1
-pytest-pep8 == 1.0.6
+tox
+pytest
+pytest-pep8
 pluggy == 0.12.0
