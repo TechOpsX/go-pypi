@@ -5,15 +5,14 @@ python:
 - '3.7'
 install:
 - pip install -r requirements.txt
-- pip install python-coveralls tox-travis
 script: tox --recreate
-#after_success:
-#- pip install -e .
-#- pytest --cov=./ --cov-report=term-missing test
-#- coveralls
+after_success:
+- py.test --cov=go-pypi --cov-report=term-missing tests
+- coveralls -i
 deploy:
   provider: pypi
   user: __token__
   password: pypi-AgEIcHlwaS5vcmcCJDQzYTM2OGYyLWExOGYtNDg1Zi04NmZkLWVjZjY5YjA2ZGJhOAACJXsicGVybWlzc2lvbnMiOiAidXNlciIsICJ2ZXJzaW9uIjogMX0AAAYgq3Q_EpJ8_YIp405sWqiuAoAzG6R7HPeayM7KLqX1M5k
   on:
     branch: master
+    python: 3.7
