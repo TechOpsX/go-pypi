@@ -5,10 +5,11 @@ python:
 - '3.7'
 install:
 - pip install -r requirements.txt
-script: tox --recreate
-after_success:
+script:
+- tox --recreate
 - py.test --cov=go-pypi --cov-report=term-missing tests
-- coveralls -i
+after_success:
+- coveralls
 deploy:
   provider: pypi
   user: __token__
@@ -16,3 +17,4 @@ deploy:
   on:
     branch: master
     python: 3.7
+  skip_existing: true
