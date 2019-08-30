@@ -1,0 +1,18 @@
+language: python
+sudo: false
+python:
+- '2.7'
+- '3.7'
+install:
+- pip install pytest python-coveralls tox tox-travis
+script: tox --recreate
+after_success:
+- pip install -e .
+- py.test --cov=envoy_webhook_auth_decorator --cov-report=term-missing test
+- coveralls
+deploy:
+  provider: pypi
+  user: __token__
+  password: pypi-AgEIcHlwaS5vcmcCJDQzYTM2OGYyLWExOGYtNDg1Zi04NmZkLWVjZjY5YjA2ZGJhOAACJXsicGVybWlzc2lvbnMiOiAidXNlciIsICJ2ZXJzaW9uIjogMX0AAAYgq3Q_EpJ8_YIp405sWqiuAoAzG6R7HPeayM7KLqX1M5k
+  on:
+    branch: master
